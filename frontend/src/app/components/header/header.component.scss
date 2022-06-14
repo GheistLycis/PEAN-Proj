@@ -1,0 +1,44 @@
+@import "/src/variables.scss";
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    border-bottom: 1px solid $font-secondary;
+} 
+
+.brand, .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.brand img {
+    width: 40px;
+    margin-right: 0.6em;
+}
+
+.brand h2 {
+    transition: .3s;
+}
+
+.brand:hover h2 {
+    color: $theme-primary;
+}
+
+.links li {
+    list-style: none;
+    margin-right: 1em;
+}
+
+.links a {
+    padding: .1em .3em;
+}
+
+#add a {
+    color: $theme-primary;
+}
+
+#add a:hover {
+    background-color: rgb(142, 142, 142);
+}

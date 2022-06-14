@@ -1,0 +1,19 @@
+@import "/src/variables.scss";
+
+footer {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid $theme-primary;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+}
+
+footer h2 {
+    margin-bottom: 1.3em;
+}
+
+footer span {
+    font-weight: bold;
+    color: $theme-primary;
+}
