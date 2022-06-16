@@ -11,6 +11,8 @@ import { HomeComponent } from './components/pages/home/home.component';
 import { AboutComponent } from './components/pages/about/about.component';
 import { NewMomentComponent } from './components/pages/new-moment/new-moment.component';
 import { FormMomentsComponent } from './components/form-moments/form-moments.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +22,15 @@ import { FormMomentsComponent } from './components/form-moments/form-moments.com
     HomeComponent,
     AboutComponent,
     NewMomentComponent,
-    FormMomentsComponent
+    FormMomentsComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule, 
-    ReactiveFormsModule,
+    ReactiveFormsModule, FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

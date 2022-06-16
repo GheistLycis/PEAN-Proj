@@ -1,1 +1,13 @@
-<p>home works!</p>
+<div class="home">
+    <h1>SEUS MOMENTOS</h1>
+    <div *ngIf="filteredMoments.length > 0; else noMoments" class="moments">
+        <div *ngFor="let moment of filteredMoments" class="moment">
+            <h2 class="title">{{ moment.title }}</h2>
+            <p class="description">{{ moment.description }}</p>
+        </div>
+    </div>
+    <ng-template #noMoments>
+        <h2>Você ainda não tem nenhum <span>momento</span> registrado T_T</h2>
+        <a routerLink="moments/new">Registrar um novo <span>momento</span>!</a>
+    </ng-template>
+</div>
