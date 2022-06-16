@@ -1,14 +1,14 @@
 import { Router } from 'express'
 
-import { Teste } from '../controllers/teste'
+import { MomentController } from '../controllers/MomentController'
 
 const router = Router()
 
 //CONTROLLERS
-const testeController = new Teste()
+const momentController = new MomentController()
 
 //ROUTES
-//TESTE
-router.get("/teste", testeController.get)
+//MOMENTS
+router.post("/api/moment", momentController.post)
 
 export default router

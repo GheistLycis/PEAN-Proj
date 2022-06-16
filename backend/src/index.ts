@@ -3,7 +3,7 @@ import cors from 'cors'
 import 'dotenv/config'
 
 import router from './routes/index'
-import db from './dataSource'
+import { initializeDB } from './dataSource'
 
 //SETTING APP
 const app = express()
@@ -26,5 +26,5 @@ const host: string = process.env.host || 'localhost'
 app.listen(port, async() => {
     console.log(`SERVER ON! - ${host}:${port}`)
     
-    await db
+    await initializeDB()
 })

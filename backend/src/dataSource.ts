@@ -1,7 +1,7 @@
 import 'dotenv/config'
 import { DataSource } from 'typeorm'
 
-const AppDataSource = new DataSource({
+export const AppDataSource = new DataSource({
     type: 'postgres',
     host: process.env.DB_HOST,
     port: +process.env.DB_PORT,
@@ -15,6 +15,6 @@ const AppDataSource = new DataSource({
     subscribers: [],
 })
 
-export default AppDataSource.initialize()
+export const initializeDB = () => AppDataSource.initialize()
     .then(() => console.log(`DATABASE CONNECTED! DB: ${process.env.DB_NAME}; USER: ${process.env.DB_USER}`))
     .catch(err => console.error("Error during Data Source initialization", err))
