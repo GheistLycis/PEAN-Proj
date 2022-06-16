@@ -1,9 +1,19 @@
 <div class="home">
     <h1>SEUS MOMENTOS</h1>
+    <div class="search">
+        <form>
+            <fa-icon [icon]="faSearch"></fa-icon>
+            <input placeholder="Buscar momento pelo título" (input)="handleSearch($event)" />
+        </form>
+    </div>
     <div *ngIf="filteredMoments.length > 0; else noMoments" class="moments">
         <div *ngFor="let moment of filteredMoments" class="moment">
             <h2 class="title">{{ moment.title }}</h2>
+            <img src="{{ baseApiUrl }}/uploads/{{ moment.image }}" alt="{{ moment.title }}" />
             <p class="description">{{ moment.description }}</p>
+            <p class="date">Em: {{ moment.created_at }}</p>
+            <p>Comentários: {{ moment.comments!.length }}</p>
+            <p>Detalhes: {{ moment.id }}</p>
         </div>
     </div>
     <ng-template #noMoments>

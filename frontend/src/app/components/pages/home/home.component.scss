@@ -1,0 +1,76 @@
+@import "/src/variables.scss";
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 0.5em;
+}
+
+.moments {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: space-between;
+
+    max-width: 80%;
+}
+
+.moment {
+    text-align: center;
+    margin-bottom: 1em;
+
+    width: 32%;
+}
+
+.moment img {
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+.moment h3, .moment p {
+    margin-bottom: 1em;
+}
+
+.date {
+    font-size: 0.7em;
+    font-style: italic;
+}
+
+a {
+    padding: 0.3em 0.6em;
+    color: $theme-primary;
+}
+
+a:hover {
+    background-color: $font-secondary;
+}
+
+.search {
+    width: 100%;
+    margin-bottom: 2em;
+}
+
+.search form {
+    position: relative;
+    display: flex;
+
+    width: 30%;
+}
+
+.search fa-icon {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+}
+
+.search input {
+    width: 100%;
+    padding: 0.5em 1em;
+
+    text-align: center;
+}

@@ -15,7 +15,8 @@ export class HomeComponent implements OnInit {
   filteredMoments: Moment[] = []
   baseApiUrl = environment.baseApiUrl
 
-  // todo search field
+  faSearch = faSearch
+  searchTerm!: string
   
   constructor(private momentService: MomentService) { }
 
@@ -28,5 +29,14 @@ export class HomeComponent implements OnInit {
       this.allMoments = data
       this.filteredMoments = data
     })
+  }
+
+  handleSearch(input: Event): void {
+    const target = input.target as HTMLInputElement
+    const value = target.value
+
+    value !== null 
+      ? this.filteredMoments = this.allMoments.filter(el => el.title.toLowerCase().includes(value))
+      : this.filteredMoments = this.allMoments
   }
 }
