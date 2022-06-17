@@ -17,7 +17,7 @@ export class MessagesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  handleClick() {
+  handleDismiss() {
     this.messageService.dismiss()
     this.dismissed.emit()
   }

@@ -1,0 +1,71 @@
+@import "src/variables.scss";
+
+.moment {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    margin: 0 auto;
+}
+
+h1, h3 {
+    margin-bottom: 1em;
+}
+
+img {
+    max-width: 500px;
+    margin: 0 auto 1em;
+}
+
+.actions {
+    background-color: #eee;
+}
+
+.about, .actions{
+    border-bottom: 1px solid black;
+    padding: 1.2em;
+    width: 100%;
+}
+
+.btn-edit, .btn-remove {
+    border: 1px solid $font-secondary;
+    padding: .4em 1em;
+    font-size: 1em;
+    margin: 0 .5em;
+    cursor: pointer;
+    background-color: white;
+    transition: .4s;
+}
+
+fa-icon {
+    margin-right: .2em;
+}
+
+.comments {
+    margin-bottom: 1em;
+    padding: 1.5em 0;
+}
+
+.btn-edit, .btn-edit path {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.btn-edit:hover, .btn-edit:hover path {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-remove, .btn-remove path {
+    border-color: red;
+    color: red;
+}
+
+.btn-remove:hover, .btn-remove:hover path {
+    background-color: red;
+    color: white;
+}

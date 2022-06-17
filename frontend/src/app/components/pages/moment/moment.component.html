@@ -2,4 +2,38 @@
     <h1>{{ moment.title }}</h1>
     <img src="{{ baseApiUrl }}/uploads/{{ moment.image }}" alt="{{ moment.title }}" />
     <p>{{ moment.description }}</p>
+    <div class="about">
+        <h3>Sobre este momento: </h3>
+        <p>{{ moment.description }}</p>
+    </div>
+    <div class="actions">
+        <h3>Ações: </h3>
+        <a routerLink="moments/edit/{{ moment.id }}" class="btn-edit">
+            <fa-icon [icon]="faEdit"></fa-icon> Editar este momento
+        </a>
+        <button class="btn-remove" (click)="handleRemoveButton(moment.id!)">
+            <fa-icon [icon]="faTimes"></fa-icon> Exlcuir este momento
+        </button>
+    </div>
+    <!-- TODO: comments section -->
+    <div class="comments">
+        <h3>Comentários ({{ moment.comments?.length || 0 }}): </h3>
+        <div *ngIf="moment.comments!.length > 0; else noComments" class="comments">
+            <div *ngFor="let comment of moment.comments" class="comment">
+                <p class="body">{{ comment.text }}</p>
+                <p class="author"><span>Por: </span>{{ comment.username }}</p>
+            </div>
+        </div>
+        <ng-template #noComments>
+            <p>Sem comentários</p>
+        </ng-template>
+        <div class="form-comments">
+            <h3>Deixe um comentário: </h3>
+            <form>
+                <input placeholder="Seu nome..." />
+                <label for="comment-text"></label>
+                <textarea placeholder="Seu comentário..." id="comment-text"></textarea>
+            </form>
+        </div>
+    </div>
 </div>

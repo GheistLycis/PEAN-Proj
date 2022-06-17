@@ -26,4 +26,12 @@ export class MomentService {
   createMoment(formData: FormData): Observable<FormData> {
     return this.http.post<FormData>(this.apiUrl, formData)
   }
+
+  removeMoment(id: string) {
+    return this.http.delete(`${this.apiUrl}/${id}`)
+  }
+
+  updateMoment(id: string, form: FormData): Observable<FormData> {
+    return this.http.put<FormData>(`${this.apiUrl}/${id}`, form)
+  }
 }
